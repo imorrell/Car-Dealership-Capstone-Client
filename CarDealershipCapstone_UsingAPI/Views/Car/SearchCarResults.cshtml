@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewData["Title"] = "SearchCarByMake";
+}
+
+@model List<Cars>
+<h1>Search Car Results</h1>
+
+<table class="table">
+    <tr>
+        <th>Id</th>
+        <th>Make</th>
+        <th>Model</th>
+        <th>Year</th>
+        <th>Color</th>
+    </tr>
+    @foreach (Cars car in Model)
+    {
+
+        <tr>
+           <td>@car.id</td>
+           <td>@car.make</td>
+           <td>@car.model</td>
+           <td>@car.year</td>
+           <td>@car.color</td>
+           <td><a href="../Car/UpdateCar?id=@car.id">Update Task</a></td>
+           <td><a href="../Car/DeleteTask?id=@car.id">Delete Task</a></td>
+        </tr>
+    }
+
+</table>

@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewData["Title"] = "SearchCar";
+}
+
+@model List<Cars>
+<h1>Search Cars</h1>
+
+<form action="../Car/SearchCarResults" method="post">
+    <select name="make">
+        <option value="" selected>Select Vehicle Make</option>
+        @foreach (Cars car in Model)
+        {
+            <option value="@car.make">@car.make</option>
+        }
+    </select>
+    <select name="model">
+        <option value="" selected>Select Vehicle Model</option>
+        @foreach (Cars car in Model)
+        {
+            <option value="@car.model">@car.model</option>
+        }
+    </select>
+        <select name="year">
+            <option value="" selected>Select Year</option>
+            @foreach (Cars car in Model)
+            {
+                <option value="@car.year">@car.year</option>
+            }
+        </select>
+        <select name="color">
+            <option value="" selected>Select color</option>
+            @foreach (Cars car in Model)
+            {
+                <option value="@car.color">@car.color</option>
+            }
+        </select>
+    @*<input type="hidden" name="id" value="1" />*@
+
+    <input type="submit" value="Search Cars" />
+
+
+</form>

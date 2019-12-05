@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewData["Title"] = "AddCar";
+}
+
+@model Cars
+<h1>Add Car</h1>
+
+<form action="../Car/AddCar" method="post">
+    <input type="text" name="make" placeholder="Enter vehicle name" />
+    <input type="text" name="model" placeholder="Enter vehicle model" />
+    <input type="text" name="year" placeholder="Enter vehicle year" />
+    <input type="text" name="color" placeholder="Enter vehicle color" />
+    <input type="hidden" name="id" value="0" />
+
+    <input type="submit" value="Add Car!" />
+</form>
